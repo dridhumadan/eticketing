@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-Ticketing | Ticket Details</title>
+    <link rel="stylesheet" href="/static/css/ticketdetails.css">
+</head>
+
+<body>
+    <header>
+        <a href="/" class="link logo">
+            <h1>E-Ticketing</h1>
+        </a>
+        <ul>
+            <li><a href="/book" class="link">Book Tickets &rarr;</a></li>
+            <li><a href="/" class="link">Home &rarr;</a></li>
+            <li><a href="/about" class="link">About &rarr;</a></li>
+            <li><a href="/contact" class="link">Contact &rarr;</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <h2>Ticket Details</h2>
+        <h3>{{ tcount }} result(s) found!</h3>
+
+        <table>
+            <tr>
+                <th>Booking ID</th>
+                <th>Phone Number</th>
+                <th>Movie</th>
+                <th>Tickets</th>
+                <th>Show Timing</th>
+            </tr>
+            {% for row in ticketList %}
+            <tr>
+                <td>{{ row.booking_id }}</td>
+                <td>{{ row.phoneno }}</td>
+                <td>{{ row.movie }}</td>
+                <td>{{ row.tickets }}</td>
+                <td>{{ row.slot }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,2 @@
+FLASK_APP=eticketing
+FLASK_ENV=development

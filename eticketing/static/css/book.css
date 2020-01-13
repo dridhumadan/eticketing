@@ -1,0 +1,98 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+body{
+    width: 100%;
+    font-family: 'Consolas', sans-serif;
+    height: 100vh;
+    background-color: black;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    padding: 1em 3em;
+    background-color: lightcoral;
+}
+
+header ul{
+    list-style: none;
+    margin: 0;
+    padding: 0.5em;
+    background: lightblue;
+    display: flex;
+    align-items: center;
+}
+
+header ul li{
+    font-size: 20px;
+    padding: 0em 1em;
+}
+
+.link{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+.link:hover{
+    color: lightyellow;
+}
+
+.logo{
+    display: inline-block;
+    margin-right: auto;
+}
+
+.logo h1{
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    color: lightcoral;
+    padding: 2em;
+}
+
+.lead{
+    text-align: center;
+}
+
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie{
+    padding: 1em;
+    margin: 1.5em;
+    border: 2px solid lightcoral;
+    max-width: 220px;
+}
+
+.movie img{
+    height: 275px;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+}
+
+.movie img:hover{
+    transform: scale(1.1);
+}
+
+.movie h2, h3{
+    margin: 0;
+    padding: 0.5em 0;
+}
+
+.blob{
+    background-color: lightcoral;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 40px;
+}

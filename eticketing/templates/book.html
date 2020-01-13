@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-Ticketing | Book</title>
+    <link rel="stylesheet" href="/static/css/book.css">
+</head>
+
+<body>
+    <header>
+        <a href="/" class="link logo">
+            <h1>E-Ticketing</h1>
+        </a>
+        <ul>
+            <li><a href="/" class="link">Home &rarr;</a></li>
+            <li><a href="/about" class="link">About &rarr;</a></li>
+            <li><a href="/contact" class="link">Contact &rarr;</a></li>
+            <li><a href="/details" class="link">Ticket Details &rarr;</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <h1 class="lead">🎬 Now Showing</h1>
+
+        <div class="list">
+            {% for movie in movieList %}
+            <div class="movie">
+                <a href="/book/{{ movie.movie_id }}">
+                    <img src='/static/images/{{movie.movie_id}}.jpg' alt="{{ movie.title }}">
+                </a>
+                <h2>{{ movie.title }}</h2>
+                <h3>{{ movie.language }} <span class="blob">{{ movie.rating }}</span></h3>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+
+</html>

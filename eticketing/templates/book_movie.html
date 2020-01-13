@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-Ticketing | {{ movie.title }}</title>
+    <link rel="stylesheet" href="/static/css/book_movie.css">
+</head>
+
+<body>
+    <header>
+        <a href="/" class="link logo">
+            <h1>E-Ticketing</h1>
+        </a>
+        <ul>
+            <li><a href="/" class="link">Home &rarr;</a></li>
+            <li><a href="/about" class="link">About &rarr;</a></li>
+            <li><a href="/contact" class="link">Contact &rarr;</a></li>
+            <li><a href="/details" class="link">Ticket Details &rarr;</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <div class="image">
+            <img src="/static/images/{{movie.movie_id}}.jpg" alt="{{movie.title}}">
+        </div>
+        <div class="right">
+            <h1 class="jumbo">{{ movie.title }}</h1>
+            <h2>{{ movie.language }}  <span class="blob">{{ movie.rating }}</span></h2>
+            <p>{{ movie.description }}</p>
+            <button href="#" id="btn">Book Tickets &rarr;</button>
+        </div>
+    </main>
+
+    <div class="overlay">
+        <div class="content">
+            <h2 id="close">❌</h2>
+            <h2>Select Slot</h2>
+            <button class="btn" id="slot1">9:30 AM</button>
+            <button class="btn" id="slot2">4:30 PM</button>
+
+            <h2 id="slot1value">Tickets Available - {{ movie.shows.slot1 }}</h2>
+            <h2 id="slot2value">Tickets Available - {{ movie.shows.slot2 }}</h2>
+
+            <form action="/bookticket/{{movie.movie_id}}" method="POST">
+                <div class="tickets">
+                    <h2 id="minus" class="counter">➖</h2>
+                    <h2 id="ticketvalue">0</h2>
+                    <h2 id="plus" class="counter">➕</h2>
+                </div>
+                <h2 class="price-text">Price : <span id="price">0</span></h2>
+                <div class="input">
+                    <label for="phoneno">Enter Phone Number</label><br>
+                    <input type="text" name="phoneno" required>
+                </div>
+                <input type="text" name="slot" id="slot" value="0" hidden>
+                <input type="text" name="tickets" id="tickets" value="0" hidden>
+                <input type="submit" value="Book &rarr;" id="submit">
+            </form>
+        </div>
+    </div>
+    <script src="/static/js/book.js"></script>
+</body>
+
+</html>
