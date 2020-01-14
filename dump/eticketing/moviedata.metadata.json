@@ -1,0 +1,1 @@
+{"options":{"autoIndexId":true},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"eticketing.moviedata"}],"uuid":"90989f0ef6d441daa738e3fd64f91e2b"}
